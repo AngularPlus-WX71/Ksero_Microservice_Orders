@@ -58,7 +58,7 @@ public class RetailSellerOrdersImpl implements RetailSellerOrderService {
 
         return repository.findById(id).map(
                 order -> repository.save(order
-                        .withQuantity(order.getQuantity())
+                        .withQuantity(request.getQuantity())
                 )).orElseThrow(
                 () -> new ResourceNotFoundException(ENTITY, id)
         );

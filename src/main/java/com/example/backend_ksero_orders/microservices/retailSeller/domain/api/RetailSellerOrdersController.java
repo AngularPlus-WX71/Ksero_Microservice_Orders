@@ -1,4 +1,4 @@
-package com.example.backend_ksero_orders.microservices.retailSeller.api;
+package com.example.backend_ksero_orders.microservices.retailSeller.domain.api;
 
 import com.example.backend_ksero_orders.microservices.retailSeller.domain.service.RetailSellerOrderService;
 import com.example.backend_ksero_orders.microservices.retailSeller.mapping.RetailSellerOrdersMapper;

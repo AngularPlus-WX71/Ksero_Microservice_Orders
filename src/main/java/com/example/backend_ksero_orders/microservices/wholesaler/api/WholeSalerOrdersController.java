@@ -1,6 +1,6 @@
 package com.example.backend_ksero_orders.microservices.wholesaler.api;
 
-import com.example.backend_ksero_orders.microservices.wholesaler.domain.persistence.service.WholeSalerOrdersService;
+import com.example.backend_ksero_orders.microservices.wholesaler.domain.service.WholeSalerOrdersService;
 import com.example.backend_ksero_orders.microservices.wholesaler.mapping.WholeSalerOrdersMapper;
 import com.example.backend_ksero_orders.microservices.wholesaler.resources.createResource.CreateWholeSalerOrderResource;
 import com.example.backend_ksero_orders.microservices.wholesaler.resources.resource.WholeSalerOrderResource;

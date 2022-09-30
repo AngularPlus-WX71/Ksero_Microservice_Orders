@@ -1,10 +1,9 @@
 package com.example.backend_ksero_orders.microservices.retailSeller.domain.model.entity;
 
-import com.example.backend_ksero_orders.shared.domain.model.AuditModel;
+import com.example.backend_ksero_orders.shared.exception.model.AuditModel;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Getter

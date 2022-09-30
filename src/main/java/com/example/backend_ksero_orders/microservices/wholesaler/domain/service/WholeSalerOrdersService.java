@@ -1,4 +1,4 @@
-package com.example.backend_ksero_orders.microservices.wholesaler.domain.persistence.service;
+package com.example.backend_ksero_orders.microservices.wholesaler.domain.service;
 
 import com.example.backend_ksero_orders.microservices.wholesaler.domain.model.entity.WholeSalerOrders;
 import org.springframework.http.ResponseEntity;

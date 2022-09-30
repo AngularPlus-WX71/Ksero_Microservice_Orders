@@ -2,7 +2,7 @@ package com.example.backend_ksero_orders.microservices.wholesaler.service;
 
 import com.example.backend_ksero_orders.microservices.wholesaler.domain.model.entity.WholeSalerOrders;
 import com.example.backend_ksero_orders.microservices.wholesaler.domain.persistence.WholeSalerOrdersRepository;
-import com.example.backend_ksero_orders.microservices.wholesaler.domain.persistence.service.WholeSalerOrdersService;
+import com.example.backend_ksero_orders.microservices.wholesaler.domain.service.WholeSalerOrdersService;
 import com.example.backend_ksero_orders.shared.exception.ResourceNotFoundException;
 import com.example.backend_ksero_orders.shared.exception.ResourceValidationException;
 import org.springframework.http.ResponseEntity;
@@ -57,7 +57,7 @@ public class WholeSalerOrdersImpl implements WholeSalerOrdersService {
 
         return repository.findById(id).map(
                 order -> repository.save(order
-                        .withQuantity(order.getQuantity())
+                        .withQuantity(request.getQuantity())
                 )).orElseThrow(
                 () -> new ResourceNotFoundException(ENTITY, id)
         );

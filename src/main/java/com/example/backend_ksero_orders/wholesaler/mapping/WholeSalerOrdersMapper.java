@@ -2,6 +2,8 @@ package com.example.backend_ksero_orders.wholesaler.mapping;
 
 import com.example.backend_ksero_orders.shared.mapping.EnhancedModelMapper;
 import com.example.backend_ksero_orders.wholesaler.domain.model.entity.WholeSalerOrders;
+import com.example.backend_ksero_orders.wholesaler.resources.createResource.CreateWholeSalerOrderResource;
+import com.example.backend_ksero_orders.wholesaler.resources.resource.WholeSalerOrderResource;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;

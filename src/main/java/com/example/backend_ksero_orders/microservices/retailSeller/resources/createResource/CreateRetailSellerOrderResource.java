@@ -8,12 +8,8 @@ import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
-
 public class CreateRetailSellerOrderResource {
 
-    private Long id;
-
     @NotNull
-    @NotBlank
     private Long quantity;
 }

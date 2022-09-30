@@ -7,9 +7,9 @@ import com.example.backend_ksero_orders.wholesaler.domain.persistence.WholeSaler
 import com.example.backend_ksero_orders.wholesaler.domain.service.WholeSalerOrdersService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.Validator;
 
 import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
 import java.util.List;
 import java.util.Set;
 

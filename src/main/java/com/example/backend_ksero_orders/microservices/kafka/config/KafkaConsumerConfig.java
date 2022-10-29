@@ -26,7 +26,7 @@ public class KafkaConsumerConfig {
         Map<String, String> props = new HashMap<>();
 
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
-        props.put(JsonSerializer.TYPE_MAPPINGS,"com.ksero:com.ksero.kafka.events.Event");
+        props.put(JsonSerializer.TYPE_MAPPINGS,"com.ksero:com.example.backend_ksero_orders.microservices.kafka.events.Event");
 
         final JsonDeserializer<Event<?>> jsonDeserializer = new JsonDeserializer<>();
 

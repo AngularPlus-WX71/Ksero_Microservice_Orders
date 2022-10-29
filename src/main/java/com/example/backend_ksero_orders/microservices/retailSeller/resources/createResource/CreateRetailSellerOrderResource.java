@@ -12,4 +12,7 @@ public class CreateRetailSellerOrderResource {
 
     @NotNull
     private Long quantity;
+
+    @NotNull
+    private Long userId;
 }

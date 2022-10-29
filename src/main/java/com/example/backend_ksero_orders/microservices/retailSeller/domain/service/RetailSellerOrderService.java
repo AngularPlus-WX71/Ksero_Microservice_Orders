@@ -11,4 +11,5 @@ public interface RetailSellerOrderService {
     RetailSellerOrders create(RetailSellerOrders request);
     RetailSellerOrders update(Long id, RetailSellerOrders request);
     ResponseEntity<?> delete(Long id);
+    ResponseEntity<?> deleteByUserId(Long userId);
 }

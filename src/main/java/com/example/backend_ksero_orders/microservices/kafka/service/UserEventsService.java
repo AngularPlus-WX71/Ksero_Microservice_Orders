@@ -2,6 +2,8 @@ package com.example.backend_ksero_orders.microservices.kafka.service;
 
 import com.example.backend_ksero_orders.microservices.kafka.events.Event;
 import com.example.backend_ksero_orders.microservices.kafka.events.EventType;
+import com.example.backend_ksero_orders.microservices.retailSeller.domain.model.entity.RetailSellerOrders;
+import com.example.backend_ksero_orders.microservices.retailSeller.domain.service.RetailSellerOrderService;
 import com.example.backend_ksero_orders.microservices.security.events.UserDeletedEvent;
 import com.example.backend_ksero_orders.microservices.wholesaler.domain.service.WholeSalerOrdersService;
 import lombok.extern.slf4j.Slf4j;
@@ -13,12 +15,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserEventsService {
     @Autowired
-    private WholeSalerOrdersService service;
+    private WholeSalerOrdersService wholeSalerOrdersService;
+    private RetailSellerOrderService retailSellerOrderService;
 
     @KafkaListener(
             topics = "${topic.user.name:users}",
             containerFactory = "kafkaListenerContainerFactory",
-            groupId = "grupo1")
+            groupId = "grupo2")
     public void consumer(Event<?> event) {
         if (event.getClass().isAssignableFrom(UserDeletedEvent.class)) {
             UserDeletedEvent userDeletedEvent = (UserDeletedEvent) event;
@@ -27,7 +30,9 @@ public class UserEventsService {
                     userDeletedEvent.getData().toString());
 
             if(userDeletedEvent.getType() == EventType.DELETED){
-                service.deleteByUserId(userDeletedEvent.getData().getId());
+                wholeSalerOrdersService.deleteByUserId(userDeletedEvent.getData().getId());
+                //retailSellerOrderService.deleteByUserId(userDeletedEvent.getData().getId());
+                //TODO: Se debe colocar una condicional que llame al servicio correspondiente segun el rol del usuario
             }
         }
     }

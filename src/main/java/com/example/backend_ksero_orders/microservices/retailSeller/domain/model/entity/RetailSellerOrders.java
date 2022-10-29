@@ -21,4 +21,7 @@ public class RetailSellerOrders extends AuditModel {
 
     @NotNull
     private Long quantity;
+
+    @NotNull
+    private Long userId;
 }

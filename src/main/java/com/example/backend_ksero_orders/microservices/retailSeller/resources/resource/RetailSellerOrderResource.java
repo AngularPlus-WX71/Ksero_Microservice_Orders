@@ -11,4 +11,5 @@ import javax.validation.constraints.NotNull;
 public class RetailSellerOrderResource {
     private Long id;
     private Long quantity;
+    private Long userId;
 }

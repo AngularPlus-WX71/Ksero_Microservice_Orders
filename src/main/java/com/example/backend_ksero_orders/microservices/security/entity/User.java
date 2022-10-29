@@ -7,4 +7,5 @@ public class User {
     private Long id;
     private String username;
     private String email;
+    //TODO: se debe tener en cuenta el tipo de usuario
 }

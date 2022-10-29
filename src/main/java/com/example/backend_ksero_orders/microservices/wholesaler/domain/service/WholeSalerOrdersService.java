@@ -11,4 +11,5 @@ public interface WholeSalerOrdersService {
     WholeSalerOrders create(WholeSalerOrders request);
     WholeSalerOrders update(Long id, WholeSalerOrders request);
     ResponseEntity<?> delete(Long id);
+    ResponseEntity<?> deleteByUserId(Long userId);
 }

@@ -72,4 +72,15 @@ public class WholeSalerOrdersImpl implements WholeSalerOrdersService {
                         })
                 .orElseThrow(() -> new ResourceNotFoundException(ENTITY, id));
     }
+
+    @Override
+    public ResponseEntity<?> deleteByUserId(Long userId) {
+
+        if (repository.findByUserId(userId).isEmpty())
+            return ResponseEntity.ok().build();
+
+        repository.findByUserId(userId).forEach(product -> repository.delete(product));
+
+        return ResponseEntity.ok().build();
+    }
 }

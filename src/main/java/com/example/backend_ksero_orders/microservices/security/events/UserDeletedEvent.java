@@ -1,6 +1,7 @@
 package com.example.backend_ksero_orders.microservices.security.events;
 
 import com.example.backend_ksero_orders.microservices.kafka.events.Event;
+import com.example.backend_ksero_orders.microservices.kafka.events.EventType;
 import com.example.backend_ksero_orders.microservices.security.entity.User;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

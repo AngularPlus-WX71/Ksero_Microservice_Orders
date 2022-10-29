@@ -23,6 +23,7 @@ public class UserEventsService {
             containerFactory = "kafkaListenerContainerFactory",
             groupId = "grupo2")
     public void consumer(Event<?> event) {
+
         if (event.getClass().isAssignableFrom(UserDeletedEvent.class)) {
             UserDeletedEvent userDeletedEvent = (UserDeletedEvent) event;
             log.info("Received Customer deleted event .... with Id={}, data={}",
@@ -30,8 +31,15 @@ public class UserEventsService {
                     userDeletedEvent.getData().toString());
 
             if(userDeletedEvent.getType() == EventType.DELETED){
-                wholeSalerOrdersService.deleteByUserId(userDeletedEvent.getData().getId());
-                //retailSellerOrderService.deleteByUserId(userDeletedEvent.getData().getId());
+               /* if (userDeletedEvent.getData().getRole().equals("retailer")) {
+                    retailSellerOrderService.deleteByUserId(userDeletedEvent.getData().getId());
+                } else if (userDeletedEvent.getData().getRole().equals("wholesaler")) {
+                    wholeSalerOrdersService.deleteByUserId(userDeletedEvent.getData().getId());
+                }*/
+
+                retailSellerOrderService.deleteByUserId(userDeletedEvent.getData().getId());
+                //wholeSalerOrdersService.deleteByUserId(userDeletedEvent.getData().getId());
+
                 //TODO: Se debe colocar una condicional que llame al servicio correspondiente segun el rol del usuario
             }
         }

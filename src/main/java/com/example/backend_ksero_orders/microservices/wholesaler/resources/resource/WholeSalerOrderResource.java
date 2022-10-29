@@ -8,4 +8,6 @@ import lombok.Setter;
 public class WholeSalerOrderResource {
     private Long id;
     private Long quantity;
+    private Long userId;
+
 }

@@ -20,4 +20,7 @@ public class WholeSalerOrders extends AuditModel {
 
     @NotNull
     private Long quantity;
+
+    @NotNull
+    private Long userId;
 }

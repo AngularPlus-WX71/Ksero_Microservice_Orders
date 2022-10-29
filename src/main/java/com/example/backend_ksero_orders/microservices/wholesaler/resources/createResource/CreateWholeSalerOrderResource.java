@@ -11,4 +11,7 @@ public class CreateWholeSalerOrderResource {
 
     @NotNull
     private Long quantity;
+
+    @NotNull
+    private Long userId;
 }

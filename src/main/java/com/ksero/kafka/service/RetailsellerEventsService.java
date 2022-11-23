@@ -24,11 +24,11 @@ public class RetailsellerEventsService {
             topics = "${topic.user.name:retailsellers}",
             containerFactory = "kafkaListenerContainerFactory",
             groupId = "retailSellerOrders")
-    public void consumer(Event<?> event) {
+    public void retailSellerEvent(Event<?> event) {
 
         if (event.getClass().isAssignableFrom(RetailSellerDeletedEvent.class)) {
             RetailSellerDeletedEvent retailsellerDeletedEvent = (RetailSellerDeletedEvent) event;
-            log.info("Received Customer deleted event .... with Id={}, data={}",
+            log.info("Received RetailSeller deleted event .... with Id={}, data={}",
                     retailsellerDeletedEvent.getId(),
                     retailsellerDeletedEvent.getData().toString());
 
@@ -43,11 +43,11 @@ public class RetailsellerEventsService {
             topics = "${topic.user.name:wholesalers}",
             containerFactory = "kafkaListenerContainerFactory",
             groupId = "wholesalerOrders")
-    public void consumerWholesaler(Event<?> event) {
+    public void wholesalerEvent(Event<?> event) {
 
         if (event.getClass().isAssignableFrom(WholesalerDeletedEvent.class)) {
             WholesalerDeletedEvent wholesalerDeletedEvent = (WholesalerDeletedEvent) event;
-            log.info("Received Customer deleted event .... with Id={}, data={}",
+            log.info("Received Wholesaler deleted event .... with Id={}, data={}",
                     wholesalerDeletedEvent.getId(),
                     wholesalerDeletedEvent.getData().toString());
 
